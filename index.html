@@ -1,0 +1,67 @@
+<div class="header">
+  <div class="version">МиниБраузер v1.0</div>
+  <div class="user-info" id="userInfo">Не вошёл</div>
+</div>
+
+<div id="authSection">
+  <h2>Регистрация</h2>
+  <input id="regNickname" placeholder="Никнейм" />
+  <input id="regPassword" type="password" placeholder="Пароль" />
+  <button onclick="register()">Зарегистрироваться</button>
+
+  <h2>Вход</h2>
+  <input id="loginNickname" placeholder="Никнейм" />
+  <input id="loginPassword" type="password" placeholder="Пароль" />
+  <button onclick="login()">Войти</button>
+
+  <div id="authMessage" style="color:red; margin-top:10px;"></div>
+</div>
+
+<div id="appSection" class="hidden">
+  <div class="tabs">
+    <div class="tab active" data-tab="browser" onclick="switchTab('browser')">Браузер</div>
+    <div class="tab" data-tab="player" onclick="switchTab('player')">Видео</div>
+    <div class="tab notify" data-tab="chat" onclick="switchTab('chat')">
+      Чат
+      <span class="notification-dot"></span>
+    </div>
+    <div class="tab" data-tab="friends" onclick="switchTab('friends')">Друзья</div>
+    <div class="tab" data-tab="logout" onclick="logout()">Выйти</div>
+  </div>
+
+  <div class="content" id="browserTab">
+    <input id="urlInput" type="text" placeholder="Введи адрес сайта" style="width:80%;" />
+    <button onclick="navigate()">Перейти</button>
+    <div id="iframeContainer" style="margin-top:10px;">
+      <iframe id="browserFrame" src="about:blank"></iframe>
+    </div>
+  </div>
+
+  <div class="content hidden" id="playerTab">
+    <h3>Плеер музыки (только твоя музыка)</h3>
+    <input id="videoUrl" type="text" placeholder="Ссылка на MP3 или MP4" style="width: 60%;" />
+    <button onclick="addVideo()">Добавить</button>
+    <audio id="player" controls></audio>
+    <h3>Плейлист:</h3>
+    <ul id="playlist"></ul>
+  </div>
+
+  <div class="content hidden" id="chatTab">
+    <h3>Чат с друзьями</h3>
+    <select id="chatFriendSelect"></select><br/>
+    <div id="chatMessages"></div>
+    <input id="chatInput" type="text" placeholder="Напиши сообщение" style="width:80%;" />
+    <button id="chatSend">Отправить</button>
+  </div>
+
+  <div class="content hidden" id="friendsTab">
+    <h3>Друзья</h3>
+    <ul id="friendList"></ul>
+    <h3>Запросы в друзья</h3>
+    <ul id="friendRequests"></ul>
+    <h3>Добавить друга</h3>
+    <input id="addFriendInput" placeholder="Ник друга" />
+    <button onclick="sendFriendRequest()">Отправить запрос</button>
+    <div id="friendMessage" style="color:red; margin-top:10px;"></div>
+  </div>
+</div>

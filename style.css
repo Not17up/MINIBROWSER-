@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+  }
+  .header {
+    background: #282c34;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header .version {
+    font-weight: bold;
+  }
+  .header .user-info {
+    font-weight: bold;
+  }
+  .tabs {
+    display: flex;
+    background: #444;
+    color: white;
+    user-select: none;
+  }
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+  }
+  .tab:hover {
+    background: #555;
+  }
+  .tab.active {
+    background: #61dafb;
+    color: black;
+    font-weight: bold;
+  }
+  .tab .notification-dot {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+    display: none;
+  }
+  .tab.notify .notification-dot {
+    display: block;
+  }
+  @keyframes blink {
+    0%, 50%, 100% {opacity: 1;}
+    25%, 75% {opacity: 0;}
+  }
+  .content {
+    padding: 10px;
+  }
+  #iframeContainer {
+    width: 100%;
+    height: 60vh;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+  #browserFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+  }
+  input, button, select {
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  button {
+    cursor: pointer;
+    background: #61dafb;
+    border: none;
+    font-weight: bold;
+  }
+  button:hover {
+    background: #21a1f1;
+  }
+  #chatMessages {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    white-space: pre-wrap;
+  }
+  #friendRequests {
+    margin-top: 10px;
+  }
+  #friendList {
+    margin-top: 10px;
+  }
+  #playlist {
+    list-style: none;
+    padding-left: 0;
+    max-width: 600px;
+  }
+  #playlist li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #player {
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  .hidden {
+    display: none !important;
+  }
